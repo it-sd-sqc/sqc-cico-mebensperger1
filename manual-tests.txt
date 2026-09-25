@@ -70,3 +70,26 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 ## Expected results
 * Only the first 8 digits, 99999999, should appear in the field; the 9th
   digit should not be accepted.
+
+# Module 5, Ticket 501: Let a user skip the status timeout with a button
+
+## Test steps
+1. Build and run CiCo.
+2. Enter 00000000 into the field and click Update.
+3. On the status panel, click the "Done" button immediately (before 10
+   seconds pass).
+
+## Expected results
+* The main panel should reappear right away after step 3, without waiting
+  for the full timeout.
+
+# Module 5, Ticket 501: Confirm the timeout still works as a fallback
+
+## Test steps
+1. Build and run CiCo.
+2. Enter 00000000 into the field and click Update.
+3. Do not click the "Done" button; wait 11 seconds.
+
+## Expected results
+* The main panel should reappear on its own after step 3, exactly as
+  before the "Done" button was added.
