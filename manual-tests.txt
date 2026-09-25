@@ -61,4 +61,12 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 ## Expected results
 * Should display "Developer" for the user name.
 
+# Module 4: Error prevention
 
+## Test steps
+1. Build and run CiCo.
+2. Click into the card number field and type 999999999.
+
+## Expected results
+* Only the first 8 digits, 99999999, should appear in the field; the 9th
+  digit should not be accepted.
