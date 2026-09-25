@@ -109,6 +109,7 @@ public class Main {
   static JLabel labelUser;
   static JLabel labelState;
   static JButton buttonAcknowledge;
+  static JButton buttonDone;
 
   // Timer variables //////////////////////////////////////////////////////////
   static java.util.Timer timer;
@@ -153,7 +154,7 @@ public class Main {
         }
 
         updateStateLabels(name, currentState == 1);
-        scheduleTransitionFrom(CARD_STATE, null);
+        scheduleTransitionFrom(CARD_STATE, buttonDone);
       }
       else {
         showError(ERROR_NOT_FOUND);
@@ -291,6 +292,15 @@ public class Main {
     labelState.setAlignmentX(JComponent.CENTER_ALIGNMENT);
     labelState.setForeground(Color.magenta);
     panelStatus.add(labelState);
+
+    // Ticket 501: Let the current user dismiss the status panel immediately
+    // so the next person doesn't have to wait out the full timeout. The
+    // timeout is left running as a fallback for anyone who walks away.
+    buttonDone = new JButton("Done");
+    buttonDone.addActionListener(handler);
+    buttonDone.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+    buttonDone.setForeground(Color.blue);
+    panelStatus.add(buttonDone);
 
     panelStatus.add(Box.createVerticalGlue());
 
