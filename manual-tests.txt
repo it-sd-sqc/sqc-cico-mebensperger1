@@ -93,3 +93,15 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 ## Expected results
 * The main panel should reappear on its own after step 3, exactly as
   before the "Done" button was added.
+
+# Module 6, Ticket 602: Test all panels for unified color scheme
+
+## Test Steps
+1. Build and run Cico.
+2. Click Update.
+3. Click Ok.
+4. Enter 00000000 into the field and click Update.
+
+## Expected results
+* All three panels (main, error, and status) should appear in similar
+  monochromatic schemes using a unified color palette
